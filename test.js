@@ -1,10 +1,17 @@
 const index = require('./index');
 
 function testeUtil(msg, verificador, esperado) {
-    if (verificador !== esperado) {
-        throw new Error(`${msg} fail. Wait '${esperado}', but came '${verificador}'`);
+
+    try {
+        if (verificador !== esperado) {
+            throw new Error(`${msg} fail. Wait '${esperado}', but came '${verificador}'`);
+        }
+        console.log(msg + " Pass");
+
+    } catch (e) {
+        throw new Error(`Throw exception ${e}.`);
     }
-    console.log(msg + " Pass");
+
 };
 
 testeUtil("ana is palindrome", index.isPalindrom("ana"), true);
