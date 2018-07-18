@@ -1,17 +1,20 @@
-function Assert(msg, verificador, esperado) {
-    try {
-        if (verificador !== esperado) {
-            throw new Error(`${msg} fail. Wait '${esperado}', but came '${verificador}'`);
-        }
-        console.log(msg + " Pass");
-    } catch (e) {
-        if (e === esperado) {
-            console.log(msg + " Pass");
-        } else {
-            throw new Error(`${msg} fail. Wait '${esperado}', but came '${verificador}'`);
+function Assert(msg, ft, params, expected) {
+    let result = ft(params);
+    if (result !== expected) {
+        throw new Error(`${msg} fail. Wait '${expected}', but came '${result}'`);
+    }
+    console.log(msg + " Pass");
+};
 
-        }
+function AssertException(msg, ft, params) {
+    try {
+        Assert(msg, ft, params);
+        throw new Error(`Exception didn't happen.`);
+    } catch (e) {
+        console.log(msg + " Pass");
     }
 };
 
 module.exports.Assert = Assert;
+
+module.exports.AssertException = AssertException;
