@@ -1,3 +1,16 @@
+function compareArrays(arrayA, arrayB) {
+    // TODO: compare elements
+    return arrayA.length == arrayB.length;
+}
+
+function AssertArray(msg, ft, params, expected) {
+    let result = ft(params);
+    if (!compareArrays(result, expected)) {
+        throw new Error(`${msg} fail. Wait '${expected}', but came '${result}'`);
+    }
+    console.log(msg + " Pass");
+};
+
 function Assert(msg, ft, params, expected) {
     let result = ft(params);
     if (result !== expected) {
@@ -16,5 +29,5 @@ function AssertException(msg, ft, params) {
 };
 
 module.exports.Assert = Assert;
-
 module.exports.AssertException = AssertException;
+module.exports.AssertArray = AssertArray;
