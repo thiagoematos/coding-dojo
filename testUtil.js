@@ -11,7 +11,7 @@ function compareArrays(arrayA, arrayB) {
     return true;
 }
 
-function AssertArray(msg, ft, params, expected) {
+function AssertArray({ msg, ft, params, expected }) {
     let result = ft(params);
     if (!compareArrays(result, expected)) {
         throw new Error(`${msg} fail. Wait '${expected}', but came '${result}'`);
