@@ -46,3 +46,16 @@ testUtil.AssertArray({
     ],
     expected: [1, 6]
 });
+
+testUtil.AssertArray({
+    msg: "given an [[[9,9],2], [3,4], [5,6]] matrix then result is [2, 9]",
+    ft: max_min_matrix.calc,
+    params: [
+        [
+            [9, 9], 2
+        ],
+        [3, 4],
+        [5, 6]
+    ],
+    expected: [2, 9]
+});
