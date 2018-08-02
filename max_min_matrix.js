@@ -1,4 +1,4 @@
-function calc(matrix) {
+module.exports = (matrix) => {
     if (matrix.length == 0) {
         return [];
     }
@@ -15,20 +15,3 @@ function calc(matrix) {
 
     return [Math.min(...matrixFlatten), Math.max(...matrixFlatten)];
 }
-
-const isArray = (...matrix) => {
-    let arrayTemp = []
-    while (Array.isArray(...matrix)) {
-        arrayTemp = new Array(...matrix)
-    }
-
-    return arrayTemp
-}
-
-const f = (a) => {
-    if (!Array.isArray(a)) {
-        return a
-    }
-}
-
-module.exports.calc = calc;

@@ -1,7 +1,6 @@
-const calc = (num) => {
+module.exports = (num) => {
     let result = []
     if (num > 0) {
-
         if (num >= 1) {
             result.push(1);
         }
@@ -21,5 +20,3 @@ const calc = (num) => {
     }
     return result
 }
-
-module.exports.calc = calc
