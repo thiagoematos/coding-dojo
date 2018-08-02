@@ -1,4 +1,4 @@
-const factorial = require('./factorial');
+const factorial = require('../src/factorial');
 
 test('given ZERO then result is ONE', () => expect(factorial(0)).toBe(1));
 test('given ONE then result is ONE', () => expect(factorial(1)).toBe(1));

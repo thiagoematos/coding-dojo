@@ -1,4 +1,4 @@
-const max_min_matrix = require('./max_min_matrix')
+const max_min_matrix = require('../src/max_min_matrix')
 
 test('given an empty matrix then result is an empty matrix', () => expect(max_min_matrix([])).toEqual(expect.arrayContaining([])));
 test('given an [1,2,3,4,5] matrix then result is [1,5]', () => expect(max_min_matrix([1, 2, 3, 4, 5])).toEqual(expect.arrayContaining([1, 5])));

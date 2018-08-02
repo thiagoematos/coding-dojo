@@ -1,4 +1,4 @@
-const fibonacci = require('./fibonacci');
+const fibonacci = require('../src/fibonacci');
 
 test('given 0 then result is empty array', () => expect(fibonacci(0)).toEqual(expect.arrayContaining([])));
 test('given 1 then result is [1]', () => expect(fibonacci(1)).toEqual(expect.arrayContaining([1])));
