@@ -1,23 +1,25 @@
-function average(arr) {
-    return arr.reduce((a, b) => a + b, 0)
+const sumElementsFromArrayByRange = (start, limit, mesures) => {
+    let sum = 0;
+    for (let j = start; j < limit; j++) {
+        sum += mesures[j];
+    }
+    return sum;
 }
 
 module.exports = function(mesures, range) {
-    let sum = 0;
-    let temp = 0;
+
     const result = [];
     const aux = [];
     let start = 0;
-    for (let i = 0; i < mesures.lenght; i++) {
-        let top = start + range;
-        if (top > mesures.lenght) {
+    for (let i = 0; i < mesures.length; i++) {
+        let limit = start + range;
+        if (limit > mesures.length) {
             break;
         }
-        for (let j = start; j < top; j++) {
-            sum += mesures[j];
-        }
-        aux.push(sum / range)
+        const sum = sumElementsFromArrayByRange(start, limit, mesures)
         start += range;
+        aux.push(Math.trunc(sum / range))
+
     }
 
     result.push(Math.min(...aux))
